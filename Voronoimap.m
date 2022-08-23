@@ -11,15 +11,14 @@ for i = 1 : n
     for j = 1 : n
         
         for p = 1 : 16
-        %dvoronoi(x(1,p),x(2,p),1) = 0; 
-        %temp = norm([i j]-[x(1,p) x(2,p)]);
+
         if norm([i j]-[x(1,p) x(2,p)]) < temp 
             temp = norm([i j]-[x(1,p) x(2,p)]);
             pnum = p;
         end
 
 
-        %answer(i,j,p) = norm([i j]-[x(1,p) x(2,p)]);
+       
         end
         
         dvoronoi(i,j,1) = color(1,pnum,1);
@@ -31,3 +30,4 @@ for i = 1 : n
 end
 result = uint8(dvoronoi);
 imshow(result)
+
